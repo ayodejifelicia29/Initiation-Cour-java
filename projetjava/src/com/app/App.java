@@ -6,15 +6,15 @@ public class App {
 
         try {
             Personne Felicia = new Personne("felicia","Ayodeji");
+           
             System.out.println( Felicia );
         }
         catch(IllegalArgumentException e) {// e qui conteint error
             System.out.println(e.getMessage());
         }
-        finally {
+        finally { // finally s'executes 
             System.out.println("ok");
         }
-        
-
     }
+    
 }
