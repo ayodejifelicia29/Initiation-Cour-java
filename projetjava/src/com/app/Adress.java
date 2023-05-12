@@ -1,11 +1,12 @@
 package com.app;
 
-public class Adresse {
+public class Adress {
 	private String number; // [1,4000]
 	private String street; // 2,50
 	private String zipcode; // 5
 	
-	public Adresse(String number, String street, String zipcode) throws Exception {
+	
+	public Adress(String number, String street, String zipcode) throws Exception {
 
 		if(number.length() > 1 && number.length()<4000){
 			this.number = number;
@@ -25,6 +26,9 @@ public class Adresse {
 			throw new Exception("le zipcode n'est pas valide");
 		}	
 	}
+	public Adress(){
+		
+	}
 	public String getNumber() {
 		return number;
 	}
@@ -43,4 +47,8 @@ public class Adresse {
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
+
+	public String toString() {
+        return String.format("%s %s %s", getNumber(), getStreet(),getZipcode());
+    }
 }

@@ -9,23 +9,37 @@ public class Personne1 {
     private Phone phone; // commence par 0; 10 chiffres
     private Email email; // [3;255], présence de @ 
     private Town town;  // alphabétique; [2 ; 32]
-    private Adresse address; // [5 ; 5] 
+    private Adress adress; // [5 ; 5] 
     private String numeroSiret;// 14
 
 
-	public Personne1(String firstname, String lastname) throws IllegalArgumentException {
+	public Personne1(String  lastname ,String firstname) throws IllegalArgumentException {
 
-		if(firstname.length() < 2) {
+		if(lastname.length() < 2) {
 			throw new IllegalArgumentException("Firstname doit être composé d'au moins 2 caractères.");
 		}
 	
-		if(lastname.length() < 2) {
+		if(firstname.length() < 2) {
 			throw new IllegalArgumentException("Lastname doit être composé d'au moins 2 caractères.");
 		}
 		
-		this.firstname = firstname;
+		
 		this.lastname = lastname;
+		this.firstname = firstname;
 	}
+	public String getLastName() {
+        return lastname;
+    }
+    
+    public String getFirstName() {
+        return firstname;
+    }
+
+    public String toString() {
+        return String.format("%s %s", getLastName(), getFirstName());
+    }
+
+	
 }
 
 
