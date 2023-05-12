@@ -2,19 +2,20 @@ package com.app;
 // dans le package il y a une seul dossier
 
 public class App {
-    public static void main(String[] args) {
+    private static String nom;
+	private  static String prenom;
+	public static void main(String[] args) { // args :arguments
+		for(int i = 0 ; i < args.length; i++){ // le methods recupere les arguments 
+			System.out.println(args[i]);
+			if(args[i].equals("--nom")){
+				nom = args[++i];
+			}
+			if(args[i].equals("--prenom")){
+				prenom = args[++i];
 
-        try {
-            Personne Felicia = new Personne("felicia","Ayodeji");
-           
-            System.out.println( Felicia );
-        }
-        catch(IllegalArgumentException e) {// e qui conteint error
-            System.out.println(e.getMessage());
-        }
-        finally { // finally s'executes 
-            System.out.println("ok");
-        }
-    }
-    
+			}
+		}
+		System.out.println("Mr " + nom + " " + prenom );
+		
+	}
 }
