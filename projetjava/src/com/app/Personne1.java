@@ -13,7 +13,7 @@ public class Personne1 {
     private String numeroSiret;// 14
 
 
-	public Personne1(String  lastname ,String firstname) throws IllegalArgumentException {
+    public Personne1(String  lastname ,String firstname, String numeroSiret) throws IllegalArgumentException {
 
 		if(lastname.length() < 2) {
 			throw new IllegalArgumentException("Firstname doit être composé d'au moins 2 caractères.");
@@ -22,10 +22,14 @@ public class Personne1 {
 		if(firstname.length() < 2) {
 			throw new IllegalArgumentException("Lastname doit être composé d'au moins 2 caractères.");
 		}
+        if(numeroSiret.length() !=14) {
+			throw new IllegalArgumentException("Lastname doit être composé d'au moins 2 caractères.");
+		}
 		
 		
 		this.lastname = lastname;
 		this.firstname = firstname;
+        this.numeroSiret =numeroSiret;
 	}
 	public String getLastName() {
         return lastname;
@@ -34,9 +38,14 @@ public class Personne1 {
     public String getFirstName() {
         return firstname;
     }
+    
+    public String getNumeroSiret(){
+        return numeroSiret;
+    }
 
+    
     public String toString() {
-        return String.format("%s %s", getLastName(), getFirstName());
+        return String.format("%s %s %S" , getLastName(), getFirstName() ,getNumeroSiret());
     }
 
 	

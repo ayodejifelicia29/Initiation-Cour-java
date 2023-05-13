@@ -16,4 +16,7 @@ public class Phone {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	public String toString() {
+        return String.format(" %s",  getPhone());
+    }
 }

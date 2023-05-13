@@ -16,4 +16,7 @@ public class Email {
 		this.email = email;
 	}
 	
+	public String toString() {
+        return String.format(" %s",  getEmail());
+    }
 }
